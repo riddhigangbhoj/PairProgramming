@@ -1,4 +1,4 @@
-# 🚀 Pair Programming App
+# Pair Programming App
 
 A **real-time collaborative coding platform** with AI-powered autocomplete, built with FastAPI, WebSockets, and React. Perfect for remote pair programming, coding interviews, and collaborative development.
 
@@ -10,7 +10,7 @@ A **real-time collaborative coding platform** with AI-powered autocomplete, buil
 
 ---
 
-## ✨ Features
+## Features
 
 ### Core Functionality
 - **Real-time Collaboration** - Multiple users can code together simultaneously via WebSockets
@@ -34,7 +34,7 @@ A **real-time collaborative coding platform** with AI-powered autocomplete, buil
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 pair-programming-app/
@@ -66,7 +66,7 @@ pair-programming-app/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - **Python 3.8+**
@@ -123,7 +123,7 @@ pair-programming-app/
 
 ---
 
-## 📡 API Reference
+## API Reference
 
 ### REST Endpoints
 
@@ -273,7 +273,7 @@ const ws = new WebSocket('ws://localhost:8000/ws/{room_id}');
 
 ---
 
-## 🧪 Testing the API
+## Testing the API
 
 ### Using cURL
 
@@ -347,7 +347,7 @@ ws.send(JSON.stringify({
 
 ---
 
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -383,7 +383,7 @@ alembic upgrade head
 
 ---
 
-## 🤖 AI Integration Guide
+## AI Integration Guide
 
 The autocomplete service is ready for production AI integration. Here's how to integrate:
 
@@ -428,7 +428,7 @@ def get_suggestions(self, code, cursor_position, language):
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 ### Production Checklist
 - [ ] Change `SECRET_KEY` in `.env`
@@ -469,7 +469,7 @@ docker run -p 8000:8000 pair-programming-app
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Backend
 - **FastAPI** - Modern, fast web framework
@@ -490,7 +490,7 @@ docker run -p 8000:8000 pair-programming-app
 
 ---
 
-## 🎯 Use Cases
+## Use Cases
 
 1. **Remote Pair Programming** - Code together from anywhere in real-time
 2. **Technical Interviews** - Conduct live coding interviews
@@ -501,7 +501,7 @@ docker run -p 8000:8000 pair-programming-app
 
 ---
 
-## 📈 Future Enhancements
+## Future Enhancements
 
 - [ ] User authentication and authorization (JWT)
 - [ ] Persistent user profiles and history
@@ -518,7 +518,7 @@ docker run -p 8000:8000 pair-programming-app
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please:
 
@@ -530,13 +530,13 @@ Contributions are welcome! Please:
 
 ---
 
-## 📝 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-## 💡 Support & Contact
+## Support & Contact
 
 - **Issues**: Open an issue on GitHub
 - **Documentation**: See `/docs` endpoint when server is running
@@ -544,12 +544,12 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-## 🌟 Acknowledgments
+## Acknowledgments
 
 Built with modern web technologies and best practices. Inspired by collaborative coding platforms like Replit, CodePen, and CodeSandbox.
 
 ---
 
-**Made with ❤️ for collaborative coding**
+**Made with love for collaborative coding**
 
 *Ready for production • Scalable • Extensible • AI-Powered*
