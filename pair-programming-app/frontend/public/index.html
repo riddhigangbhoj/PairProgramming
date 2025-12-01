@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pair Programming App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .demo-section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .demo-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .code-box {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+        .button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            transition: background 0.3s;
+        }
+
+        .button:hover {
+            background: #5568d3;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .status.active {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status.pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Pair Programming App</h1>
+        <p class="subtitle">Real-time collaborative coding platform with AI-powered autocomplete</p>
+
+        <div class="demo-section">
+            <h2>🎯 Quick Start</h2>
+            <div class="code-box"># Backend (Terminal 1)
+cd backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+
+# Frontend (Terminal 2) - OPTIONAL
+cd frontend
+npm install
+npm run dev</div>
+            <p><strong>API Documentation:</strong> <a href="http://localhost:8000/docs" target="_blank">http://localhost:8000/docs</a></p>
+            <p><strong>Health Check:</strong> <a href="http://localhost:8000/health" target="_blank">http://localhost:8000/health</a></p>
+        </div>
+
+        <div class="demo-section">
+            <h2>✨ Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Real-time Collaboration</h3>
+                    <span class="status active">ACTIVE</span>
+                    <p>WebSocket-based live code synchronization across multiple users</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Room Management</h3>
+                    <span class="status active">ACTIVE</span>
+                    <p>Create and manage coding rooms with unique IDs</p>
+                </div>
+                <div class="feature-card">
+                    <h3>AI Autocomplete</h3>
+                    <span class="status active">ACTIVE</span>
+                    <p>Mock AI-powered code suggestions (ready for integration)</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Multi-language Support</h3>
+                    <span class="status active">ACTIVE</span>
+                    <p>Python, JavaScript, TypeScript, and more</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>🔌 API Endpoints</h2>
+            <div class="code-box">POST   /rooms              - Create a new room
+GET    /rooms/{room_id}    - Get room details
+GET    /rooms              - List all rooms
+DELETE /rooms/{room_id}    - Delete a room
+POST   /autocomplete       - Get AI suggestions
+WS     /ws/{room_id}       - WebSocket connection</div>
+        </div>
+
+        <div class="demo-section">
+            <h2>📡 WebSocket Events</h2>
+            <div class="code-box">// Client → Server
+{ "type": "code_update", "data": { "code": "..." } }
+{ "type": "cursor_position", "data": { "line": 10, "col": 5 } }
+
+// Server → Client
+{ "type": "init", "data": { "room_id": "...", "code": "..." } }
+{ "type": "user_joined", "data": { "user_count": 3 } }
+{ "type": "user_left", "data": { "user_count": 2 } }
+{ "type": "code_update", "data": { "code": "..." } }</div>
+        </div>
+
+        <div class="demo-section">
+            <h2>🛠️ Tech Stack</h2>
+            <p><strong>Backend:</strong> FastAPI, SQLAlchemy, WebSockets, Pydantic</p>
+            <p><strong>Frontend:</strong> React, TypeScript, WebSocket API</p>
+            <p><strong>Database:</strong> SQLite (default), PostgreSQL/MySQL compatible</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; color: #666;">
+            <p>Built with ❤️ for collaborative coding</p>
+            <p style="margin-top: 10px;">Ready for AI integration • Production-ready architecture • Extensible design</p>
+        </div>
+    </div>
+</body>
+</html>
