@@ -23,7 +23,7 @@ def upgrade() -> None:
     op.create_table(
         'rooms',
         sa.Column('id', sa.String(36), primary_key=True),
-        sa.Column('name', sa.String(255), nullable=False, index=True),
+        sa.Column('name', sa.String(255), nullable=False),
         sa.Column('code', sa.Text(), default='# Start coding here...'),
         sa.Column('language', sa.String(50), default='python'),
         sa.Column('created_at', sa.TIMESTAMP(timezone=True), nullable=True),
