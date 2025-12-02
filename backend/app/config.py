@@ -19,10 +19,16 @@ class Settings(BaseSettings):
     
     # CORS - origins allowed to access the API
     ALLOWED_ORIGINS: List[str] = [
+        # Local development
         "http://localhost:3000",
         "http://localhost:5173",
         "http://127.0.0.1:3000",
         "http://127.0.0.1:5173",
+        # Production domains
+        "https://app.riddhigangbhoj.com",
+        "https://riddhigangbhoj.com",
+        "https://www.riddhigangbhoj.com",
+        "https://api.riddhigangbhoj.com",
     ]
     
     # Application

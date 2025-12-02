@@ -15,6 +15,7 @@ from app.database import engine
 from app.models import Base
 from app.routes import rooms, autocomplete, websocket
 from app.config import settings
+from app.middleware import SecurityHeadersMiddleware
 
 # Configure logging
 logging.basicConfig(
@@ -119,6 +120,10 @@ async def global_exception_handler(request: Request, exc: Exception):
 # ============================================================================
 # Middleware
 # ============================================================================
+
+# Security headers middleware (apply first)
+if not settings.DEBUG:
+    app.add_middleware(SecurityHeadersMiddleware)
 
 # CORS configuration
 app.add_middleware(
