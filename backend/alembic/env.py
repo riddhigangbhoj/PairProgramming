@@ -20,7 +20,9 @@ from app.config import settings
 config = context.config
 
 # Override sqlalchemy.url with DATABASE_URL from environment
-config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
+# Escape % signs for ConfigParser (% -> %%)
+database_url = settings.DATABASE_URL.replace("%", "%%")
+config.set_main_option("sqlalchemy.url", database_url)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
