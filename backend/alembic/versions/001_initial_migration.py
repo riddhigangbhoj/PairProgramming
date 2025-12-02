@@ -26,8 +26,8 @@ def upgrade() -> None:
         sa.Column('name', sa.String(255), nullable=False, index=True),
         sa.Column('code', sa.Text(), default='# Start coding here...'),
         sa.Column('language', sa.String(50), default='python'),
-        sa.Column('created_at', sa.DateTime(), nullable=True),
-        sa.Column('updated_at', sa.DateTime(), nullable=True),
+        sa.Column('created_at', sa.TIMESTAMP(timezone=True), nullable=True),
+        sa.Column('updated_at', sa.TIMESTAMP(timezone=True), nullable=True),
     )
 
     # Create index on name column
