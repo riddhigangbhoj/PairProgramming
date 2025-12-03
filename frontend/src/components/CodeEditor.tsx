@@ -86,7 +86,9 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ roomId, language }) => {
         // We'll use our manual trigger instead for more control
         return { items: [] };
       },
-      freeInlineCompletions: () => {}
+      disposeInlineCompletions: () => {
+        // Cleanup method - no-op for now
+      }
     });
   };
 

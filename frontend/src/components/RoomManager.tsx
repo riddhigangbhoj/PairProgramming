@@ -26,7 +26,7 @@ const RoomManager: React.FC<RoomManagerProps> = ({ onJoinRoom }) => {
 
   const fetchRooms = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/rooms`);
+      const response = await fetch(`${API_BASE_URL}/rooms/`);
       if (!response.ok) throw new Error('Failed to fetch rooms');
       const data = await response.json();
       setRooms(data);
@@ -42,7 +42,7 @@ const RoomManager: React.FC<RoomManagerProps> = ({ onJoinRoom }) => {
     setError('');
 
     try {
-      const response = await fetch(`${API_BASE_URL}/rooms`, {
+      const response = await fetch(`${API_BASE_URL}/rooms/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: roomName, language }),
