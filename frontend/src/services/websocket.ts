@@ -1,4 +1,8 @@
-const WS_BASE_URL = 'ws://localhost:8000';
+const getWsBaseUrl = () => {
+  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+  // Convert http:// to ws:// and https:// to wss://
+  return apiUrl.replace(/^http/, 'ws');
+};
 
 interface WebSocketMessage {
   type: string;
@@ -19,6 +23,7 @@ export class WebSocketService {
   }
 
   private connect() {
+    const WS_BASE_URL = getWsBaseUrl();
     const url = `${WS_BASE_URL}/ws/${this.roomId}`;
     console.log('Connecting to WebSocket:', url);
 
